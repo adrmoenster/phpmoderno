@@ -34,6 +34,17 @@
         $valor7 = (int)"950"; // aqui é uma forma de forçar a receber como sendo inteiro
         var_dump($valor7);
 
+        //array
+        $vetor = [6, 2.5, false, "Adriano"];
+        var_dump($vetor);//mostra que é um array e mostra cada valor sua posição e seu tipo primitivo
+
+        // Object
+        class Pessoa{
+            private string $nome;
+        }
+        $n = new Pessoa;
+        var_dump($n);
+
     ?>
 </body>
 </html>
