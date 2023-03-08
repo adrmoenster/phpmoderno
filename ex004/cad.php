@@ -24,6 +24,7 @@
 
             echo "<p>Olá ".$nom ." ". $sobnom.", seja bem vindo!";//mostrando os valores recebidos por cada variável fazendo uma 
 
+            
             ?>
             
     </main>
