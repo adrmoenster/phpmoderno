@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio03</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            background-image: linear-gradient(180deg, #372991, #15142b);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+        section{
+            width: 50vw;
+            height: 20vh;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+       
+        section, header {
+            font-size: 1.2em;
+        }
+
+        section > header h1 {
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.788);
+            padding: 10px;
+        }
+        section > article p{
+            padding-top: 5px;
+            font-size: 1em;
+
+        }
+        
+        input[type=submit] {
+            color: white;  
+            width: 40vw;
+            margin: 10px;      
+            padding: 10px;       
+            background-color: blue;   
+            border-radius: 10px;
+        }
+       
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <section>
+        <header>
+        <h1>Conversor de Moendas</h1>
+        </header>
+        <article>
+            <form action="converte.php" method="post">
+                <p>Quantos R$ você tem a ser convertido?</p><br>
+                <label for="ivlr">Valor R$</label>
+                <input type="number" name="valor" id="ivlr" step=".01">
+                
+                <p><input type="submit" value="Converter"></p>
+            
+            </form>
+        </article>
+    </section>
+</body>
+</html>
