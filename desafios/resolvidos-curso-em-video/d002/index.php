@@ -41,7 +41,10 @@
 
         echo "<p>O numero gerado por mt_rand() foi $num3</p>";
 
+        
         ?>
+        <button onclick="javascript:document.location.reload()">&#x1F504; Gerar Outro</button>
+
     </main>
 </body>
 </html>
