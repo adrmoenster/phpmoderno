@@ -26,7 +26,7 @@
             //Ao informar abaixo "true" vem um array, se informar "false" retorna um objeto 
             $dados = json_decode(file_get_contents($url), true);
 
-            //Pegando os dados vindos por url no array nos campos informados 
+            //Pegando os dados vindos da API vindas por url no array nos campos informados 
             $cotacao = $dados["value"][0]["cotacaoCompra"];
 
             //Valor informado no formulario pelo usuário
