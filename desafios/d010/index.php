@@ -4,40 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reajustador de Preços</title>
+    <title>Calcula idade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <?php
-        $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);    
-        $precoProd = $_GET['prProd'] ?? 0;
-        $porcReaj =$_GET['porcRea'] ?? 0;
-        $vlrReaj = ($precoProd * $porcReaj) / 100;
-        $novoPreco = $precoProd + $vlrReaj;
-    
+    <?php 
+        $nasc = $_GET['annasc'] ?? 0;
+        $anoSaber = $_GET['ansaber'] ?? 0;
 
+        $idade = $anoSaber - $nasc;
+    
     ?>
-
     <main>
-        <h1>Reajustador de Preços</h1>
-        <form action="<?=$_SERVER['PHP_SELF'];?>" method="get">
-            <label for="prProd">Preço do Produto (R$)</label>
-            <input type="number" name="prProd" id="prProd" value="<?=$precoProd;?>">
-            <label for="porcRea">Qual será o ercentual de reajuste? (<?=$porcReaj;?>%)</label>
-            <input type="range" name="porcRea" id="porcRea" value="<?=$porcReaj;?>">
-            <input type="submit" value="Reajustar">
-    
+        <h1>Calculando a sua idade</h1>
+        <form action="<?= $_SERVER['PHP_SELF'];?>" method="get">
+            <label for="annasc">Em que ano você nasceu</label>
+            <input type="number" name="annasc" id="annasc" value="<?=$nasc;?>">
+            <label for="ansaber">Quer saber sua idade em que ano?(atualmente estamos em <?=date('Y')?>)</label>
+            <input type="number" name="ansaber" id="ansaber" value="<?=$anoSaber;?>">
+            <input type="submit" value="Qual será a minha idade?">
         </form>
     </main>
     <section>
-        <h2>Resultado do Reajuste</h2>
+        <h2>Resultado</h2>
         <?php 
-            echo "<p>O produto custava ".numfmt_format_currency($padrao, $precoProd, "BRL")." com <strong>$porcReaj% de aumento</strong> vai passar a custar <strong>".numfmt_format_currency($padrao, $novoPreco, "BRL")."</strong> a partir de agora </p>";
+            echo "<p>Quem nasceu em 1978 terá <strong>$idade</strong> anos de idade em $anoSaber</p>"
+        
         ?>
     </section>
-    </body>
-    <script>
-
-    </script>
+    
+</body>
 </html>
